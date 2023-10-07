@@ -53,7 +53,6 @@ Recipes are sets of instructions that outline how to prepare a specific dish.
 They detail the ingredients, their quantities, and a step-by-step process to 
 create the desired culinary outcome.
 
-![Ingredients And Recipe](./assets/ingredients-and-recipe.jpg)
 
 Your Chingu Voyage team will be using this data to create an app that will help 
 anyone interested in creating dishes and flavours to explore this recipe in novel ways. 
