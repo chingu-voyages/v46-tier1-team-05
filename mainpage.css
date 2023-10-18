@@ -1,0 +1,45 @@
+.head1 {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.head2 {
+    font-size: 17px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: rgb(27, 187, 185);
+    padding: 10px 0px 10px 0px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-link {
+    margin-right: auto; 
+}
+
+.search1 {
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    bottom: 0px;
+    background-color: #073d37;
+    color: #fff;
+    position: absolute;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: auto;
+}
