@@ -31,13 +31,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item me-1">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 bg-white">
+                <li class="nav-item me-1 ">
                 <a class="nav-link nav-link-style" aria-current="page" href="index.html">Recipes</a>
                 </li>
                 
                 <li class="nav-item me-1">
-                <a class="nav-link nav-link-style" href="about.html">About Our Team</a>
+                <a class="nav-link nav-link-style" href="about.html">About</a>
                 </li>
 
             </ul>
@@ -50,18 +50,20 @@
     <!-- MAIN BODY, SEARCH and RECIPES -->
     <main class="container-fluid">
 
-        <section class="mt-5">
+        <section>
             
-                <h1 class="head1">Recipe App</h1>
+                <h1 class="head1 text-center fw-bold">Recipe App</h1>
            
-                <h2 class="head2 mb-3">Recipes around your desired ingredient! </h2>
+                <h2 class="text-center mb-3">Recipes around your desired ingredient! </h2>
             
         </section>
         
         <!--Search banner/search bar-->
         <section class="search1">
             <p>Enter in an ingredient you would like to use in a recipe.</p>
-            <input type="text" placeholder="Search.." id="term">
+            <input type="text" placeholder="Search.." id="term" class="lh-lg">
+
+            <button type="button" class="btn btn-success rounded-pill my-4 px-4 mx-1" onclick="searchRecipe()">Search</button>
         </section>
         
         <section class="results">
@@ -71,8 +73,11 @@
         </section>
         
     </main>
-    <footer class="bg-success">
+    <footer class="bg-success text-center">
         <p>Made by @cheulgi, @warlita, and @nereidarondon of Chingu Voyage 46 Team 05</p>
+        <div class="m-auto text-center">
+            <a href="https://github.com/chingu-voyages/v46-tier1-team-05"><img class="" src="./assets/github.svg" alt="View team GitHub repo" width="40" height="40"/></a>
+        </div>
     </footer>
 
 

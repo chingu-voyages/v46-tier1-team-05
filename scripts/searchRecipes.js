@@ -13,6 +13,14 @@ element.addEventListener('keydown', function (button) {
 	}
 });
 
+function searchRecipe(){
+	if(element.value !== ""){
+		recipes.length = 0; //reset array
+		display();
+		getJson(element.value);
+	}
+}
+
 // retrieve json data
 function getJson(term) {
 	console.log(term);
