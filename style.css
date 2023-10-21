@@ -1,0 +1,62 @@
+/* uncomment as needed */
+
+/* *{
+    outline: 1px solid red;
+} */
+
+/* ----------------------------------------- */
+.header-logo{
+    transition: all ease-in-out;
+}
+.header-logo:hover{
+    filter: drop-shadow(3px 3px 4px rgb(63, 18, 52));
+}
+.head1 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.head2 {
+    text-align: center;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    padding: 10px 0px 10px 0px;
+}
+
+.navbar-size{
+    height:80px;
+}
+.nav-link-style{
+    width: 140px;
+    transition: all ease-in-out;
+}
+.nav-link-style:hover{
+    filter: drop-shadow(1px 1px 1px rgba(63, 18, 52, .5));
+}
+.search1 {
+    text-align: center;
+}
+.results{
+    min-height: 200px;
+}
+footer {
+    width: 100%;
+    height:100px;
+    bottom: 0px;
+    color: #fff;
+    position: absolute;
+    padding-top: 20px;
+    text-align: center;
+}
+.icon-li{
+    filter: invert(23%) sepia(38%) saturate(4142%) hue-rotate(198deg) brightness(108%) contrast(92%);
+}
+
+@media screen and (max-width: 768px){
+    .header-logo{
+        width:200px;
+    }
+}
