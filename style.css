@@ -41,12 +41,9 @@
 }
 footer {
     width: 100%;
-    height:100px;
-    bottom: 0px;
+    height:175px;
     color: #fff;
-    position: relative;
-    padding-top: 20px;
-    text-align: center;
+    padding: 20px 0;
 }
 .icon-li{
     filter: invert(23%) sepia(38%) saturate(4142%) hue-rotate(198deg) brightness(108%) contrast(92%);
