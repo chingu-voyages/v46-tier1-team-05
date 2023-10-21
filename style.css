@@ -1,8 +1,8 @@
 /* uncomment as needed */
 
-*{
+/* *{
     outline: 1px solid red;
-}
+} */
 
 /* ----------------------------------------- */
 .header-logo{
@@ -31,7 +31,7 @@
     transition: all ease-in-out;
 }
 .nav-link-style:hover{
-    filter: drop-shadow(1px 1px 1px rgba(63, 18, 52, .5));
+    filter: drop-shadow(1px 1px 1px rgba(63, 18, 52, .6));
 }
 .search1 {
     text-align: center;
