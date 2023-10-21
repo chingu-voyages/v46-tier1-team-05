@@ -12,9 +12,11 @@
     filter: drop-shadow(3px 3px 10px rgb(104, 89, 101));
 }
 .head1 {
-    margin-top: 6rem;
+    margin-top: 4rem;
 }
-
+.about-heading1{
+  margin-top: 6rem;
+}
 .navbar {
     position: sticky;
     top: 0;
