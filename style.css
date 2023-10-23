@@ -1,45 +1,56 @@
+/* uncomment as needed */
+
+/* *{
+    outline: 1px solid red;
+} */
+
+/* ----------------------------------------- */
+.header-logo{
+    transition: all ease-in-out;
+}
+.header-logo:hover{
+    filter: drop-shadow(3px 3px 10px rgb(104, 89, 101));
+}
 .head1 {
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
+    margin-top: 4rem;
 }
-
-.head2 {
-    font-size: 17px;
-    margin-left: 10px;
-    margin-bottom: 15px;
-    text-align: center;
+.about-heading1{
+  margin-top: 6rem;
 }
-
 .navbar {
     position: sticky;
     top: 0;
-    background-color: rgb(27, 187, 185);
     padding: 10px 0px 10px 0px;
-    margin: 0 auto;
-    overflow: hidden;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
 }
 
-.nav-link {
-    margin-right: auto; 
+.navbar-size{
+    height:60px;
 }
-
+.nav-link-style{
+    width: 100px;
+    transition: all ease-in-out;
+}
+.nav-link-style:hover{
+    filter: drop-shadow(1px 1px 1px rgba(63, 18, 52, .6));
+}
 .search1 {
     text-align: center;
 }
-
+.results{
+    min-height: 200px;
+}
 footer {
     width: 100%;
-    bottom: 0px;
-    background-color: #073d37;
+    height:175px;
     color: #fff;
-    position: absolute;
-    padding-top: 20px;
-    padding-bottom: 30px;
-    text-align: center;
-    font-size: 10px;
-    font-weight: auto;
+    padding: 20px 0;
+}
+.icon-li{
+    filter: invert(23%) sepia(38%) saturate(4142%) hue-rotate(198deg) brightness(108%) contrast(92%);
+}
+
+@media screen and (max-width: 768px){
+    .header-logo{
+        width:100px;
+    }
 }
