@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body class="d-flex flex-column">
     
     <!-- Hero Image -->
     <header class="position-relative">
@@ -23,7 +23,7 @@
     </header>
     
     <!--Nav Bar-->
-    <nav class="navbar-size navbar navbar-expand-lg">
+    <nav class="navbar-size navbar navbar-expand-lg mb-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@
                 </li>
                 
                 <li class="nav-item me-1">
-                <a class="nav-link nav-link-style" href="about.html">About</a>
+                <a class="nav-link link-style" href="about.html">About</a>
                 </li>
 
             </ul>
@@ -52,31 +52,31 @@
 
         <section>
             
-                <h1 class="head1 text-center fw-bold">Recipe App</h1>
+                <h1 class="pt-5 text-center">Recipe App</h1>
            
                 <h2 class="text-center mb-3">Recipes around your desired ingredient! </h2>
             
         </section>
         
         <!--Search banner/search bar-->
-        <section class="search1">
+        <section class="search1 text-center pb-5">
             <p>Enter in an ingredient you would like to use in a recipe.</p>
             <input type="text" placeholder="Search..." id="term" class="lh-lg">
 
             <button type="button" class="btn btn-success rounded-pill my-4 px-4 mx-1" onclick="searchRecipe()">Search</button>
         </section>
         
-        <section class="results">
-            <div id ="list" class="container-lg d-flex row">
-
-            </div>
+        <section id ="list" class="results container-lg d-flex row m-auto mb-5 gap-5 justify-content-center">
+           
         </section>
         
     </main>
-    <footer class="bg-success text-center">
-        <p>Made by @cheulgi, @warlita, and @nereidarondon of Chingu Voyage 46 Team 05</p>
-        <div class="m-auto text-center">
-            <a href="https://github.com/chingu-voyages/v46-tier1-team-05"><img class="" src="./assets/github.svg" alt="View team GitHub repo" width="40" height="40"/></a>
+    <footer class="bg-success text-center text-white mt-auto flex-grow-1">
+        <div class="container-lg">
+            <p class="pt-3">Made by @cheulgi, @warlita, and @nereidarondon of Chingu Voyage 46 Team 05</p>
+            <div class="m-auto text-center">
+                <a href="https://github.com/chingu-voyages/v46-tier1-team-05"><img class="" src="./assets/github.svg" alt="View team GitHub repo" width="40" height="40"/></a>
+            </div>
         </div>
     </footer>
 
