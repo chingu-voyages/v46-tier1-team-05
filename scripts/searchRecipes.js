@@ -6,7 +6,7 @@ const recipes = []; // array to hold recipes
 //enter key
 const element = document.getElementById('term');
 element.addEventListener('keydown', function (button) {
-	if (button.key === 'Enter') {
+	if (button.key === 'Enter' && element.value < 0 ) {
 		recipes.length = 0; //reset array
 		display();
 		getJson(element.value);
@@ -14,7 +14,7 @@ element.addEventListener('keydown', function (button) {
 });
 
 function searchRecipe(){
-	if(element.value !== ""){
+	if(element.value > 0 ){
 		recipes.length = 0; //reset array
 		display();
 		getJson(element.value);
