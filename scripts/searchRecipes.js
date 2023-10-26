@@ -78,18 +78,17 @@ function display(){
 
     recipeCard += `
       
-        <div class="card h-100 m-3 text-black" col-sm-3 style="width: 15rem;">
+        <div class="recipe-card-div card h-100 m-2 p-0 text-black col-sm-3 shadow">
          
-          <img src=${recipes[i].beauty_url ? recipes[i].beauty_url:recipes[i].thumbnail_url} class="card-img-top" alt="" width="240" height="240" >
+          <img src=${recipes[i].beauty_url ? recipes[i].beauty_url:recipes[i].thumbnail_url} class="card-img-top overflow-hidden ratio ratio-1x1" alt="" width="240" height="240" >
           
-          <div class="card-body">
+          <div class="card-body h-100">
 
-            <h6 class="card-title">${recipes[i].name}</h6>
-
-						<p class="card-text">${(recipes[i].user_ratings.score*5).toFixed(1) + '⭐'}</p>
-            <p class="card-text">${recipes[i].tags[0].display_name}</p>
-						<p class="card-text">${recipes[i].tags[6].display_name}</p>
-
+            <h5 class="card-title recipe-card-title">${recipes[i].name}</h5>
+						<div class="d-flex flex-row justify-content-between">
+							<p class="card-text">${(recipes[i].user_ratings.score*5).toFixed(1) + '⭐'}</p>
+							<p class="card-text">${recipes[i].tags[0].display_name}</p>
+						</div>
             <a href="#" class="btn btn-success">View Recipe</a>
           
           </div>
@@ -119,17 +118,17 @@ function display(){
 // console.log('ingredients:');
 // console.log(data.results[1].sections[0].components[0].measurements[0].quantity);
 // console.log(data.results[1].sections[0].components[0].measurements[0].unit.abbreviation);
-// //console.log(data.results[1].sections[0].components.length);
+//console.log(data.results[1].sections[0].components.length);
 // for(let i = 0; i < data.results[1].sections[0].components.length; i++){
 //   console.log(data.results[1].sections[0].components[i].ingredient.name);
 // }
-// //console.log(data.results[1].sections[0].components[0].ingredient.name); //*** 
-// //console.log(data.results[1].sections[0].components[0].ingredient.display_singular);
-// //console.log(data.results[1].sections[0].components[0].ingredient.display_plural);
+//console.log(data.results[1].sections[0].components[0].ingredient.name); //*** 
+//console.log(data.results[1].sections[0].components[0].ingredient.display_singular);
+//console.log(data.results[1].sections[0].components[0].ingredient.display_plural);
 // console.log(data.results[1].sections[0].components[0].extra_comment);
 
 // //! Number of servings
-// //console.log(data.results[1].num_servings);
+//console.log(data.results[1].num_servings);
 // console.log(data.results[1].yields);
 
 // //! Step by step instructions
