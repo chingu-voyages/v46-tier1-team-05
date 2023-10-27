@@ -3,27 +3,38 @@
 
 const recipes = []; // array to hold recipes
 
-//enter key
 const element = document.getElementById('term');
+let elementNoSpace;
+
+//enter key
 element.addEventListener('keydown', function (button) {
-	if (button.key === 'Enter' && element.value < 0 ) {
-		recipes.length = 0; //reset array
-		display();
-		getJson(element.value);
+	if (button.key === 'Enter') {
+		elementNoSpace = element.value.replace(/ /g, '');
+		if (elementNoSpace !== '') {
+			console.log('no space ' + elementNoSpace);
+			console.log('enter');
+			recipes.length = 0; //reset array
+			display();
+			getJson(element.value);
+		} else {
+			console.log('empty search');
+		}
 	}
 });
 
-function searchRecipe(){
-	if(element.value > 0 ){
+function searchRecipe() {
+	elementNoSpace = element.value.replace(/ /g, '');
+	if (elementNoSpace !== '') {
+		console.log(element.value);
 		recipes.length = 0; //reset array
-		display();
 		getJson(element.value);
+	} else {
+		console.log('empty search');
 	}
 }
-
 // retrieve json data
 function getJson(term) {
-	console.log(term);
+	console.log('term:' + term);
 	fetch('assets/recipes.json')
 		.then((res) => res.json())
 		.then((data) => {
@@ -65,6 +76,9 @@ function display() {
 	let recipeList = document.getElementById('list');
 
 	recipeList.innerHTML = ''; //reset list
+	if (recipes.length === 0) {
+		console.log('no matches');
+	}
 
 	for (let i = 0; i < recipes.length; i++) {
 		let li = document.createElement('li');
