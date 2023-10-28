@@ -3,31 +3,39 @@
 
 const recipes = []; // array to hold recipes
 let recipeList = document.getElementById('list');
-
-
-// **************************************************
-//enter key
 const element = document.getElementById('term');
+let elementNoSpace;
+
+//enter key
 element.addEventListener('keydown', function (button) {
 	if (button.key === 'Enter') {
-		recipes.length = 0; //reset array
-		display();
-		getJson(element.value);
+		elementNoSpace = element.value.replace(/ /g, '');
+		if (elementNoSpace !== '') {
+			console.log('no space ' + elementNoSpace);
+			console.log('enter');
+			recipes.length = 0; //reset array
+			display();
+			getJson(element.value);
+		} else {
+			console.log('empty search');
+		}
 	}
 });
 
 //search button
-function searchRecipe(){
-	if(element.value !== ""){
+function searchRecipe() {
+	elementNoSpace = element.value.replace(/ /g, '');
+	if (elementNoSpace !== '') {
+		console.log(element.value);
 		recipes.length = 0; //reset array
-		display();
 		getJson(element.value);
+	} else {
+		console.log('empty search');
 	}
 }
-
 // retrieve json data
 function getJson(term) {
-	console.log(term);
+	console.log('term:' + term);
 	fetch('assets/recipes.json')
 		.then((res) => res.json())
 		.then((data) => {
@@ -59,7 +67,12 @@ function termSearch(data, term) {
 //displays list
 // function display() {
 
-// 	recipeList.innerHTML = ''; //reset list
+
+	recipeList.innerHTML = ''; //reset list
+	if (recipes.length === 0) {
+		console.log('no matches');
+	}
+
 
 // 	for (let i = 0; i < recipes.length; i++) {
 // 		let div = document.createElement('div');
