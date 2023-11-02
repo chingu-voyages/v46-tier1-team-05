@@ -113,7 +113,77 @@ function display(){
 }
 
 
+//making recipes clickable
+function recipeClick() {
+    recipe = display.recipeList.addEventListener(button)
+    if recipes === (href)
+    .then 
+}
 
+//display recipe details
+function details() {
+    getJson();
+        if 
+}
+
+// Get a reference to the recipe name element
+const viewRecipe = document.getElementById('btn btn-success'); 
+
+// Add a click event listener to the recipe name
+viewRecipe.addEventListener('click', () => {
+	modal.style.display = 'block'; // show the modal
+})
+
+function closeModal() {
+	modal.style.display = 'none'; // hide the modal
+}
+
+// Fetch JSON data when the recipe name is clicked
+  fetch("./assets/recipes.json") 
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+
+// Create and display a modal with the recipe details
+      const modal = document.createElement('div');
+      modal.classList.add('modal');
+
+      modal.innerHTML = `
+        <h2>${data.name}</h2>
+        <p>Category: ${data.type}</p>
+        <p>Nutrition: ${data.nutrition}</p>
+        <p>Instructions: ${data.instructions}</p>
+        <p>Ingredients: ${data.components.join(', ')}</p>
+        <button id="expand-recipe">Expand</button>
+        <div id="recipe-content" style="display: none;">
+          ${data.fullRecipe}
+        </div>
+        <button id="close-modal">X</button>
+      `;
+
+      document.body.appendChild(modal);
+
+      // Add click event listeners for expanding and closing the modal
+      const expandButton = document.getElementById('expand-recipe');
+      const recipeContent = document.getElementById('recipe-content');
+      const closeButton = document.getElementById('close-modal');
+
+      expandButton.addEventListener('click', () => {
+        recipeContent.style.display = 'block';
+      });
+
+      closeButton.addEventListener('click', () => {
+        modal.remove();
+      });
+    })
+    // Handle the error, e.g., display an error message to the user
+    .catch(error => {
+      console.error('Error:', error);
+    });
 
 
 //***********************************************************************
