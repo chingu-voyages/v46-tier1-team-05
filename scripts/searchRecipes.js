@@ -122,11 +122,16 @@ const modal = document.createElement('div');
 function showModal(id){
   
   // Create the modal to display the recipe details
-  modal.classList.add('modal');  //give it a class of 'modal'
+  modal.classList.add('modal','bg-white', 'mx-1', 'my-5', 'p-5', 'rounded', 'border', 'border-secondary', );  //give it a class of 'modal'
 
   let ingredients = '';
   for(let ing=0; ing < recipes[id].sections[0].components.length; ing++){
+    if(recipes[id].sections[0].components[ing].raw_text !== "n/a"){
       ingredients += `<li>${recipes[id].sections[0].components[ing].raw_text}</li>`;
+
+    } else {
+      ingredients += `<li>${recipes[id].sections[0].components[ing].ingredient.name}</li>`;
+    }
   }
   //structure the html in the modal
   modal.innerHTML = `
