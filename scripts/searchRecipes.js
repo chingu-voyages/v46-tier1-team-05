@@ -116,21 +116,28 @@ function termSearch(data, term) {
 // }
 
 
+const modal = document.createElement('div');
 
 // Access JSON data from array when the recipe button is clicked
 function showModal(id){
   
   // Create the modal to display the recipe details
-  const modal = document.createElement('div');
   modal.classList.add('modal');  //give it a class of 'modal'
 
+  let ingredients = '';
+  for(let ing=0; ing < recipes[id].sections[0].components.length; ing++){
+      ingredients += `<li>${recipes[id].sections[0].components[ing].raw_text}</li>`;
+  }
   //structure the html in the modal
   modal.innerHTML = `
   <h2>${recipes[id].name}</h2>
   <p>Category: ${recipes[id].type}</p>
   <p>Nutrition: ${recipes[id].nutrition}</p>
   <p>Instructions: ${recipes[id].instructions}</p>
-  <p>Ingredients: ${recipes[id].components.join(', ')}</p>
+  <p>Ingredients:</p>
+  <ul>
+    ${ingredients}
+  </ul>
   <button id="expand-recipe">Expand</button>
   <div id="recipe-content" style="display: none;">
   ${recipes[id].fullRecipe}
