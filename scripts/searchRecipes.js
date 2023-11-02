@@ -33,6 +33,7 @@ function searchRecipe() {
 		console.log('empty search');
 	}
 }
+
 // retrieve json data
 function getJson(term) {
 	console.log('term:' + term);
@@ -51,6 +52,7 @@ function getJson(term) {
 //searches array of components and adds them to list
 //calls display to output recipe names
 function termSearch(data, term) {
+  
 	for (let i = 0; i < data.results.length; i++) {
 		for (let j = 0; j < data.results[i].sections.length; j++) {
 			for (let k = 0; k < data.results[i].sections[j].components.length;k++) {
@@ -64,27 +66,14 @@ function termSearch(data, term) {
 	display();
 }
 
-//displays list
-// function display() {
+//displays list of recipes as cards
+  function display(){
+  if (recipes.length === 0) {
+    console.log('no matches');
+  }
 
-
-	recipeList.innerHTML = ''; //reset list
-	if (recipes.length === 0) {
-		console.log('no matches');
-	}
-
-
-// 	for (let i = 0; i < recipes.length; i++) {
-// 		let div = document.createElement('div');
-// 		div.innerText = recipes[i];
-// 		recipeList.appendChild(div);
-// 	}
-// }
-
-function display(){
 	let recipeCard = '';
-	recipeCard.innerHTML = ''; //reset list
-
+	
   for(let i = 0; i < recipes.length; i++){
     
     console.log(recipes[i].name);
@@ -102,7 +91,7 @@ function display(){
 							<p class="card-text">${(recipes[i].user_ratings.score*5).toFixed(1) + '⭐'}</p>
 							<p class="card-text">${recipes[i].tags[0].display_name}</p>
 						</div>
-            <a href="#" class="btn btn-success">View Recipe</a>
+            <button class="btn btn-success" onclick="showModal(${i})">View Recipe</button>
           
           </div>
 
@@ -114,76 +103,80 @@ function display(){
 
 
 //making recipes clickable
-function recipeClick() {
-    recipe = display.recipeList.addEventListener(button)
-    if recipes === (href)
-    .then 
-}
+// function recipeClick() {
+//     recipe = display.recipeList.addEventListener(button)
+//     if recipes === (href)
+//     .then 
+// }
 
 //display recipe details
-function details() {
-    getJson();
-        if 
+// function details() {
+//     getJson();
+//         if 
+// }
+
+
+
+// Access JSON data from array when the recipe button is clicked
+function showModal(id){
+  
+  // Create the modal to display the recipe details
+  const modal = document.createElement('div');
+  modal.classList.add('modal');  //give it a class of 'modal'
+
+  //structure the html in the modal
+  modal.innerHTML = `
+  <h2>${recipes[id].name}</h2>
+  <p>Category: ${recipes[id].type}</p>
+  <p>Nutrition: ${recipes[id].nutrition}</p>
+  <p>Instructions: ${recipes[id].instructions}</p>
+  <p>Ingredients: ${recipes[id].components.join(', ')}</p>
+  <button id="expand-recipe">Expand</button>
+  <div id="recipe-content" style="display: none;">
+  ${recipes[id].fullRecipe}
+  </div>
+  <button id="close-modal" onclick="closeModal()">X</button>
+  `;
+
+  document.body.appendChild(modal);  //add to DOM
+
+  modal.style.display = 'block';  //show the modal
 }
+
+// close modal
+function closeModal() {
+  modal.style.display = 'none'; // hide the modal
+}
+
 
 // Get a reference to the recipe name element
-const viewRecipe = document.getElementById('btn btn-success'); 
+//const viewRecipe = document.getElementsByClassName(`btn`); 
 
-// Add a click event listener to the recipe name
-viewRecipe.addEventListener('click', () => {
-	modal.style.display = 'block'; // show the modal
-})
+// Add a click event listener to the recipe button
+// viewRecipe.addEventListener('click', () => {
+// 	modal.style.display = 'block'; // show the modal
+// })
 
-function closeModal() {
-	modal.style.display = 'none'; // hide the modal
-}
 
-// Fetch JSON data when the recipe name is clicked
-  fetch("./assets/recipes.json") 
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
 
-// Create and display a modal with the recipe details
-      const modal = document.createElement('div');
-      modal.classList.add('modal');
+//       // Add click event listeners for expanding and closing the modal
+//       const expandButton = document.getElementById('expand-recipe');
+//       const recipeContent = document.getElementById('recipe-content');
+//       const closeButton = document.getElementById('close-modal');
 
-      modal.innerHTML = `
-        <h2>${data.name}</h2>
-        <p>Category: ${data.type}</p>
-        <p>Nutrition: ${data.nutrition}</p>
-        <p>Instructions: ${data.instructions}</p>
-        <p>Ingredients: ${data.components.join(', ')}</p>
-        <button id="expand-recipe">Expand</button>
-        <div id="recipe-content" style="display: none;">
-          ${data.fullRecipe}
-        </div>
-        <button id="close-modal">X</button>
-      `;
+//       expandButton.addEventListener('click', () => {
+//         recipeContent.style.display = 'block';
+//       });
 
-      document.body.appendChild(modal);
+//       closeButton.addEventListener('click', () => {
+//         modal.remove();
+//       });
+    
 
-      // Add click event listeners for expanding and closing the modal
-      const expandButton = document.getElementById('expand-recipe');
-      const recipeContent = document.getElementById('recipe-content');
-      const closeButton = document.getElementById('close-modal');
-
-      expandButton.addEventListener('click', () => {
-        recipeContent.style.display = 'block';
-      });
-
-      closeButton.addEventListener('click', () => {
-        modal.remove();
-      });
-    })
     // Handle the error, e.g., display an error message to the user
-    .catch(error => {
-      console.error('Error:', error);
-    });
+    // .catch(error => {
+    //   console.error('Error:', error);
+    // });
 
 
 //***********************************************************************
