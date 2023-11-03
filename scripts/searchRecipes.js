@@ -122,8 +122,9 @@ const modal = document.createElement('div');
 function showModal(id){
   
   // Create the modal to display the recipe details
-  modal.classList.add('modal','bg-white', 'mx-1', 'my-5', 'p-5', 'rounded', 'border', 'border-secondary', );  //give it a class of 'modal'
+  modal.classList.add('modal');  //give it a class of 'modal'
 
+  //traverses the array of ingredients and concatenates them within li
   let ingredients = '';
   for(let ing=0; ing < recipes[id].sections[0].components.length; ing++){
     if(recipes[id].sections[0].components[ing].raw_text !== "n/a"){
@@ -133,22 +134,153 @@ function showModal(id){
       ingredients += `<li>${recipes[id].sections[0].components[ing].ingredient.name}</li>`;
     }
   }
+
+  //concatenates steps within li
+  let stepsList = '';
+  for (let stps=0; stps < recipes[id].instructions.length; stps++){
+    stepsList += `<li>${recipes[id].instructions[stps].display_text}</li>`;
+  }
+
+  //traverses topics array to find the index of any key:value pair that has the value of breakfast/lunch/dinner
+  let findMealType = recipes[id].topics.find((x)=> x.name===('Breakfast' || 'Lunch' || 'Dinner'));
+  
+  let elementPosition = recipes[id].topics.indexOf(findMealType);
+  
+
+
   //structure the html in the modal
   modal.innerHTML = `
-  <h2>${recipes[id].name}</h2>
-  <p>Category: ${recipes[id].type}</p>
-  <p>Nutrition: ${recipes[id].nutrition}</p>
-  <p>Instructions: ${recipes[id].instructions}</p>
-  <p>Ingredients:</p>
-  <ul>
-    ${ingredients}
-  </ul>
-  <button id="expand-recipe">Expand</button>
-  <div id="recipe-content" style="display: none;">
-  ${recipes[id].fullRecipe}
-  </div>
-  <button id="close-modal" onclick="closeModal()">X</button>
-  `;
+    
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- Row 1 -->
+            <h1 class="modal-title fs-4 text-center">${recipes[id].name}</h1>
+
+            <button type="button" class="btn-close" onclick="closeModal()" aria-label="Close"></button>
+          </div>
+          
+                <div class="modal-body">
+          
+            
+                    <div class="container-fluid ">
+                        <!-- Row 2 -->
+                        <div class="row">
+                            <div class="col-md-4 text-center">${recipes[id].tags[0].display_name}</div>
+                            <div class="col-md-4 text-center">${recipes[id].yields}</div>
+                            <div class="col-md-4 text-center">${(recipes[id].user_ratings.score*5).toFixed(1) + '⭐'}</div>
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div class="row my-2">
+                            <div class="col">${recipes[id].description}</div>
+                        </div>
+
+
+                        <!-- Row 4 -->
+                        <div class="row">
+                            <div class="col"> 
+                              <img src=${recipes[id].beauty_url ? recipes[id].beauty_url:recipes[id].thumbnail_url} class="card-img-top overflow-hidden my-3" alt="Freshly cooked ${recipes[id].name}." width="200" height="350" >
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            
+                            <!-- Row 5 LEFT-->
+                            <div class="col-md-8">  
+
+                                <div class="row">
+                                    <div class="col"> 
+                                    <h4>Ingredients:</h4>   
+                                    <ul>
+                                      ${ingredients}
+                                    </ul>
+                                    
+                                    </div>
+                                </div>                                
+                            </div>
+                                
+                                
+                            <!-- Row 5 RIGHT -->
+                            <div class="col-md-4">
+                                <div class="row">
+                                  <h5>Nutrition Facts: </h5>
+                                  <ul class="list-group list-group-flush">
+                                    <li class="ps-2" style="list-style-type: none">Calories: ${recipes[id].nutrition.calories}</li>
+                                    <li class="ps-2" style="list-style-type: none">Carbs: ${recipes[id].nutrition.carbohydrates}</li>
+                                    <li class="ps-2" style="list-style-type: none">Fat: ${recipes[id].nutrition.fat}</li>
+                                    <li class="ps-2" style="list-style-type: none">Fiber: ${recipes[id].nutrition.fiber}</li>
+                                    <li class="ps-2" style="list-style-type: none">Protein: ${recipes[id].nutrition.protein}</li>
+                                    <li class="ps-2" style="list-style-type: none">Sugar: ${recipes[id].nutrition.sugar}</li>
+                                  </ul>
+                                </div>
+
+                                
+                                <div class="row my-2">
+                                  <h5>Cook Time:</h5>
+                                  <p>${recipes[id].total_time_tier.display_tier}</p>
+     
+                                <div class="row my-2">
+                                  <h5>${recipes[id].topics[0].name} </h5>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                           
+                        <!-- Row 6 -->
+                        <div class="row">
+                            <div class="col"> 
+                                <h4>Steps:</h4>  
+                                <ol>${stepsList}</ol>   
+                            </div>
+                        </div>
+
+                        <!-- Row 7 -->
+                        <div class="row d-flex m-auto">
+                            <div class="col d-flex m-auto justify-content-center"> 
+                            <video controls width="300">
+                              <source src=${recipes[id].original_video_url} type="video/mp4" />                         
+                            </video>
+                            </div>
+                        </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
+          </div>
+        </div>
+      </div>
+    `;
+  
+  
+    
+  // `
+  // <h2>${recipes[id].name}</h2>
+  // <p>Category: ${recipes[id].type}</p>
+  // <p>Instructions: ${recipes[id].instructions}</p>
+  // <p>Ingredients:</p>
+  // <ul>
+  // ${ingredients}
+  // </ul>
+  // <button id="expand-recipe">Expand</button>
+  // <div id="recipe-content" style="display: none;">
+  // ${recipes[id].fullRecipe}
+  // </div>
+  // <p>Nutrition: ${recipes[id].nutrition}</p>
+  // <button id="close-modal" onclick="closeModal()">X</button>
+  // `;
 
   document.body.appendChild(modal);  //add to DOM
 
