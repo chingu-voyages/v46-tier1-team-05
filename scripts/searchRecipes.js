@@ -1,7 +1,7 @@
 //test term
 //const term = 'egg yolk';
 
-const recipes = []; // array to hold recipes
+var recipes = []; // array to hold recipes
 let recipeList = document.getElementById('list');
 const element = document.getElementById('term');
 let elementNoSpace;
@@ -17,7 +17,10 @@ element.addEventListener('keydown', function (button) {
 			display();
 			getJson(element.value);
 		} else {
-			console.log('empty search');
+			//reset and clear array
+			console.log('empty search ');
+			recipes.length = 0;
+			display();
 		}
 	}
 });
@@ -29,8 +32,6 @@ function searchRecipe() {
 		console.log(element.value);
 		recipes.length = 0; //reset array
 		getJson(element.value);
-	} else {
-		console.log('empty search');
 	}
 }
 // retrieve json data
@@ -53,26 +54,33 @@ function getJson(term) {
 function termSearch(data, term) {
 	for (let i = 0; i < data.results.length; i++) {
 		for (let j = 0; j < data.results[i].sections.length; j++) {
-			for (let k = 0; k < data.results[i].sections[j].components.length;k++) {
-				if (data.results[i].sections[j].components[k].ingredient.name.includes(term)) {
+			for (
+				let k = 0;
+				k < data.results[i].sections[j].components.length;
+				k++
+			) {
+				if (
+					data.results[i].sections[j].components[
+						k
+					].ingredient.name.includes(term)
+				) {
 					recipes.push(data.results[i]);
 				}
 			}
 		}
 	}
-  console.log('These are the recipes: ', recipes);
+	recipes = Array.from(new Set(recipes));
+	console.log('These are the recipes: ', recipes);
 	display();
 }
 
 //displays list
 // function display() {
 
-
-	recipeList.innerHTML = ''; //reset list
-	if (recipes.length === 0) {
-		console.log('no matches');
-	}
-
+recipeList.innerHTML = ''; //reset list
+if (recipes.length === 0) {
+	console.log('no matches');
+}
 
 // 	for (let i = 0; i < recipes.length; i++) {
 // 		let div = document.createElement('div');
@@ -81,25 +89,32 @@ function termSearch(data, term) {
 // 	}
 // }
 
-function display(){
+function display() {
 	let recipeCard = '';
 	recipeCard.innerHTML = ''; //reset list
 
-  for(let i = 0; i < recipes.length; i++){
-    
-    console.log(recipes[i].name);
+	for (let i = 0; i < recipes.length; i++) {
+		console.log(recipes[i].name);
 
-    recipeCard += `
+		recipeCard += `
       
         <div class="recipe-card-div card h-100 m-2 p-0 text-black col-sm-3 shadow">
          
-          <img src=${recipes[i].beauty_url ? recipes[i].beauty_url:recipes[i].thumbnail_url} class="card-img-top overflow-hidden ratio ratio-1x1" alt="" width="240" height="240" >
+          <img src=${
+			recipes[i].beauty_url
+				? recipes[i].beauty_url
+				: recipes[i].thumbnail_url
+		} class="card-img-top overflow-hidden ratio ratio-1x1" alt="" width="240" height="240" >
           
           <div class="card-body h-100">
 
             <h5 class="card-title recipe-card-title">${recipes[i].name}</h5>
 						<div class="d-flex flex-row justify-content-between">
-							<p class="card-text">${(recipes[i].user_ratings.score*5).toFixed(1) + '⭐'}</p>
+							<p class="card-text">${
+								(
+									recipes[i].user_ratings.score * 5
+								).toFixed(1) + '⭐'
+							}</p>
 							<p class="card-text">${recipes[i].tags[0].display_name}</p>
 						</div>
             <a href="#" class="btn btn-success">View Recipe</a>
@@ -108,13 +123,9 @@ function display(){
 
         </div>
     `;
-  }
-  recipeList.innerHTML = recipeCard;
+	}
+	recipeList.innerHTML = recipeCard;
 }
-
-
-
-
 
 //***********************************************************************
 // //! name of dish
@@ -122,7 +133,6 @@ function display(){
 
 // //! image of dish
 // console.log('image: ', data.results[1].beauty_url);
-
 
 // //! description of the dish
 // console.log('Description: ',data.results[1].description);
@@ -135,7 +145,7 @@ function display(){
 // for(let i = 0; i < data.results[1].sections[0].components.length; i++){
 //   console.log(data.results[1].sections[0].components[i].ingredient.name);
 // }
-//console.log(data.results[1].sections[0].components[0].ingredient.name); //*** 
+//console.log(data.results[1].sections[0].components[0].ingredient.name); //***
 //console.log(data.results[1].sections[0].components[0].ingredient.display_singular);
 //console.log(data.results[1].sections[0].components[0].ingredient.display_plural);
 // console.log(data.results[1].sections[0].components[0].extra_comment);
@@ -163,7 +173,6 @@ function display(){
 // console.log(data.results[1].instructions[7].display_text);
 // console.log('Step ', data.results[1].instructions[8].position);
 // console.log(data.results[1].instructions[8].display_text);
-
 
 // //! nutrition facts
 // console.log('Calories: ', data.results[1].nutrition.calories);
