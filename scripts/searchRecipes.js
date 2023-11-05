@@ -1,7 +1,7 @@
 //test term
 //const term = 'egg yolk';
 
-const recipes = []; // array to hold recipes
+var recipes = []; // array to hold recipes
 let recipeList = document.getElementById('list');
 const element = document.getElementById('term');
 let elementNoSpace;
@@ -18,7 +18,10 @@ element.addEventListener('keydown', function (button) {
 			display();
 			getJson(element.value);
 		} else {
-			console.log('empty search');
+			//reset and clear array
+			console.log('empty search ');
+			recipes.length = 0;
+			display();
 		}
 	}
   
@@ -33,8 +36,6 @@ function searchRecipe() {
 		console.log(element.value);
 		recipes.length = 0; //reset array
 		getJson(element.value);
-	} else {
-		console.log('empty search');
 	}
 }
 
@@ -60,16 +61,26 @@ function termSearch(data, term) {
   
 	for (let i = 0; i < data.results.length; i++) {
 		for (let j = 0; j < data.results[i].sections.length; j++) {
-			for (let k = 0; k < data.results[i].sections[j].components.length;k++) {
-				if (data.results[i].sections[j].components[k].ingredient.name.includes(term)) {
+			for (
+				let k = 0;
+				k < data.results[i].sections[j].components.length;
+				k++
+			) {
+				if (
+					data.results[i].sections[j].components[
+						k
+					].ingredient.name.includes(term)
+				) {
 					recipes.push(data.results[i]);
 				}
 			}
 		}
 	}
-  console.log('These are the recipes: ', recipes);
+	recipes = Array.from(new Set(recipes));
+	console.log('These are the recipes: ', recipes);
 	display();
 }
+
 
 //displays list of recipes as cards
   function display(){
@@ -82,7 +93,10 @@ function termSearch(data, term) {
   for(let i = 0; i < recipes.length; i++){
     
     console.log(recipes[i].name);
-    
+
+
+
+
     recipeCard += `
     
     <div class="recipe-card-div card h-100 m-2 p-0 text-black col-sm-3 shadow">
@@ -251,7 +265,6 @@ function closeModal() {
 // //! image of dish
 // console.log('image: ', data.results[1].beauty_url);
 
-
 // //! description of the dish
 // console.log('Description: ',data.results[1].description);
 
@@ -263,7 +276,7 @@ function closeModal() {
 // for(let i = 0; i < data.results[1].sections[0].components.length; i++){
 //   console.log(data.results[1].sections[0].components[i].ingredient.name);
 // }
-//console.log(data.results[1].sections[0].components[0].ingredient.name); //*** 
+//console.log(data.results[1].sections[0].components[0].ingredient.name); //***
 //console.log(data.results[1].sections[0].components[0].ingredient.display_singular);
 //console.log(data.results[1].sections[0].components[0].ingredient.display_plural);
 // console.log(data.results[1].sections[0].components[0].extra_comment);
@@ -291,7 +304,6 @@ function closeModal() {
 // console.log(data.results[1].instructions[7].display_text);
 // console.log('Step ', data.results[1].instructions[8].position);
 // console.log(data.results[1].instructions[8].display_text);
-
 
 // //! nutrition facts
 // console.log('Calories: ', data.results[1].nutrition.calories);
