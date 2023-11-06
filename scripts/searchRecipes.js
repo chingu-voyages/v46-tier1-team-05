@@ -107,8 +107,8 @@ function termSearch(data, term) {
     
     <h5 class="card-title recipe-card-title">${recipes[i].name}</h5>
     <div class="d-flex flex-row justify-content-between">
-    <p class="card-text">${(recipes[i].user_ratings.score*5).toFixed(1) + '⭐'}</p>
-    <p class="card-text">${recipes[i].tags[0].display_name}</p>
+    <p class="card-text fw-bold">${(recipes[i].user_ratings.score*5).toFixed(1) + '⭐'}</p>
+    <p class="card-text fw-bold">${recipes[i].tags[0].display_name}</p>
     </div>
     <button class="btn btn-success" onclick="showModal(${i})">View Recipe</button>
     
@@ -164,9 +164,9 @@ function showModal(id){
                     <div class="container-fluid ">
                         <!-- Row 2 -->
                         <div class="row">
-                            <div class="col-md-4 text-center">${recipes[id].tags[0].display_name}</div>
-                            <div class="col-md-4 text-center">${recipes[id].yields}</div>
-                            <div class="col-md-4 text-center">${(recipes[id].user_ratings.score*5).toFixed(1) + '⭐'}</div>
+                            <div class="col-md-4 text-center fw-bold">${recipes[id].tags[0].display_name}</div>
+                            <div class="col-md-4 text-center fw-bold">${recipes[id].yields}</div>
+                            <div class="col-md-4 text-center fw-bold">${(recipes[id].user_ratings.score*5).toFixed(1) + '⭐'}</div>
                         </div>
 
                         <!-- Row 3 -->
@@ -188,7 +188,7 @@ function showModal(id){
 
                                 <div class="row">
                                     <div class="col"> 
-                                    <h4>Ingredients:</h4>   
+                                    <h4 class="fw-bold">Ingredients:</h4>   
                                     <ul>
                                       ${ingredients}
                                     </ul>
@@ -199,15 +199,15 @@ function showModal(id){
                             <!-- Row 5 RIGHT col -->
                             <div class="col-md-4">
                                 <div class="row my-2">
-                                    <h5>Category:</h5>
+                                    <h5  class="fw-bold">Category:</h5>
                                     <p>${recipes[id].topics[0].name} </p>
                                 </div>
                                 <div class="row my-2">
-                                    <h5>Cook Time:</h5>
+                                    <h5 class="fw-bold">Cook Time:</h5>
                                     <p>${recipes[id].total_time_tier.display_tier}</p>
                                 </div>
                                 <div class="row">
-                                    <h5>Nutrition Facts: </h5>
+                                    <h5 class="fw-bold">Nutrition Facts: </h5>
                                     <ul class="list-group list-group-flush">
                                       <li class="px-2" style="list-style-type: none">Calories: ${recipes[id].nutrition.calories}</li>
                                       <li class="px-2" style="list-style-type: none">Carbs: ${recipes[id].nutrition.carbohydrates}</li>
@@ -223,7 +223,7 @@ function showModal(id){
                         <!-- Row 6 -->
                         <div class="row mt-5">
                             <div class="col"> 
-                                <h4>Steps:</h4>  
+                                <h4 class="fw-bold">Steps:</h4>  
                                 <ol>${stepsList}</ol>   
                             </div>
                         </div>
