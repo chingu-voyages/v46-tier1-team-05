@@ -1,8 +1,8 @@
 /* uncomment as needed */
 
-*{
+/* *{
     outline: 1px solid red;
-}
+} */
 
 /* ----------------------------------------- */
 
@@ -15,6 +15,7 @@ h1{
 }
 .page-header{
     color:#4D1C2D;
+    font-size: 50px;
 } 
 .header-logo{
     transition: all ease-in-out;
@@ -65,11 +66,11 @@ footer {
     filter: invert(10%) sepia(17%) saturate(5870%) hue-rotate(283deg) brightness(90%) contrast(98%);
 }
 .developer-div {
-    width:450px;
+    width:500px;
     margin:auto;
 }
 .dev-content-div{
-    width:175px;
+    width:200px;
 }
 .about-empty-div{
     width:40px;
@@ -80,8 +81,11 @@ footer {
         width:100px;
     }
 }
-@media screen and (max-width: 425px){
+@media screen and (max-width: 475px){
     .dev-content-div{
         text-align: center;
+    }
+    .about-empty-div{
+        display: none;
     }
 }
