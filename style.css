@@ -22,15 +22,12 @@ body{
 .navbar-size{
     height:60px;
 }
-.link-style{
+.nav-link-style{
     transition: all ease-in-out;
 }
-.link-style:hover{
-    filter: drop-shadow(1px 1px 1px rgba(63, 18, 52, .6));
+.nav-link-style:hover{
+    filter: drop-shadow(1px 1px 1px rgba(63, 18, 52, 0.6));
 }
-/* .results{
-    min-height: 250px;
-} */
 .recipe-card-div{
     width:300px;
 }
@@ -52,12 +49,31 @@ footer {
 .bg-icon-div:hover{
     filter:drop-shadow(0 0 2px rgba(255, 255, 255, .8));
 }
-.icon-li{
+.icon-linkedin{
     filter: invert(23%) sepia(38%) saturate(4142%) hue-rotate(198deg) brightness(108%) contrast(92%);
 }
-
+.icon-linkedin:hover,
+.icon-github:hover{
+    filter: invert(10%) sepia(17%) saturate(5870%) hue-rotate(283deg) brightness(90%) contrast(98%);
+}
+.developer-div {
+    width:450px;
+    margin:auto;
+}
+.dev-content-div{
+    width:175px;
+}
+.about-empty-div{
+    width:40px;
+    height:40px;
+}
 @media screen and (max-width: 768px){
     .header-logo{
         width:100px;
+    }
+}
+@media screen and (max-width: 425px){
+    .dev-content-div{
+        text-align: center;
     }
 }
