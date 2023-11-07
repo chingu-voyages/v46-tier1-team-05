@@ -13,6 +13,7 @@
 - [Acknowledgements](#acknowledgements)
 - [About Chingu](#about-chingu)
 - [Developers](#developers)
+- [Contributing](#contributing)
 
 ## Overview
 
@@ -20,7 +21,7 @@ Recipe Finder is a web application designed to help users find recipes based on 
 
 Try out the live version [here](https://chingu-voyages.github.io/v46-tier1-team-05/).
 
-![Recipe Finder](#) <!-- Replace with a screenshot or GIF of your app -->
+![Recipe Finder](#assets/recipefinder.png) <!-- Replace with a screenshot or GIF of your app -->
 
 ## General Instructions
 
