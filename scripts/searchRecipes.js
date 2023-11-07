@@ -15,11 +15,13 @@ function theme(){
   if(body.getAttribute("data-bs-theme","dark")=== "dark"){
     console.log("if", body.getAttribute("data-bs-theme"));
     body.setAttribute("data-bs-theme","light");
-    
+    headers[0].classList.add("page-header");
+    headers[0].classList.remove("darkmode-h1");
   }else{
     console.log("else", body.getAttribute("data-bs-theme"));
     body.setAttribute("data-bs-theme","dark");
-    headers.classList.add('darkmode-h1');
+    headers[0].classList.add("darkmode-h1");
+    headers[0].classList.remove("page-header");
 
   }
 }
