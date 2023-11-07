@@ -1,128 +1,104 @@
-# voyage-tasks
+# Voyage-Tasks Recipe Finder
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
-
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
-
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
-
-> Own it & Make it your Own!
-
-## Team Documents
-
-You may find these helpful as you work together to organize your project.
-
-- [Team Project Ideas](./docs/team_project_ideas.md)
-- [Team Decision Log](./docs/team_decision_log.md)
-
-Meeting Agenda templates (located in the `/docs` directory in this repo):
-
-- Meeting - Voyage Kickoff --> ./docs/meeting-voyage_kickoff.docx
-- Meeting - App Vision & Feature Planning --> ./docs/meeting-vision_and_feature_planning.docx
-- Meeting - Sprint Retrospective, Review, and Planning --> ./docs/meeting-sprint_retrospective_review_and_planning.docx
-- Meeting - Sprint Open Topic Session --> ./docs/meeting-sprint_open_topic_session.docx
-
-
-
-
-
-
-# voyage-project-tier1-recipe
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 ## Table of Contents
-
-* [Overview](#overview)
-* [General Instructions](#general-instructions)
-* [Requirements & Specifications](#requirements-specifications)
-* [Acknowledgements](#acknowledgements)
-* [About Chingu](#about-chingu)
+- [Overview](#overview)
+- [General Instructions](#general-instructions)
+- [Requirements & Specifications](#requirements--specifications)
+- [Getting Started](#getting-started)
+- [Acknowledgements](#acknowledgements)
+- [About Chingu](#about-chingu)
+- [Developers](#developers)
 
 ## Overview
 
-Ingredients and recipes are fundamental components of the culinary world, 
-working together to create a wide array of dishes and flavors. 
+Recipe Finder is a web application designed to help users find recipes based on ingredients they have at hand. Whether you're a seasoned chef or a beginner in the kitchen, our app makes it easy to discover new and exciting dishes to prepare.
 
-Ingredients are the raw materials used in cooking and food preparation while 
-Recipes are sets of instructions that outline how to prepare a specific dish.
+Try out the live version [here](https://chingu-voyages.github.io/v46-tier1-team-05/).
 
-They detail the ingredients, their quantities, and a step-by-step process to 
-create the desired culinary outcome.
-
-
-Your Chingu Voyage team will be using this data to create an app that will help 
-anyone interested in creating dishes and flavours to explore this recipe in novel ways. 
-Your app will summarize this data and will allow users to select subsets of it for 
-detailed step-by-step process.
-
-This will provide you with an opportunity to build Web Development experience
-dealing with large volumes of recipe data, nutritional information with a subset of
-categories, and user queries.
+![Recipe Finder](#) <!-- Replace with a screenshot or GIF of your app -->
 
 ## General Instructions
 
-This project is designed to be worked on by a team rather than an individual
-Chingu. This means you and your team will need to thoroughly read and
-understand the requirements and specifications below, **_and_** define and
-manage your project following the _Agile Methodology_ defined in the
-[Voyage Handbook](https://github.com/chingu-voyages/Handbook/blob/main/docs/guides/voyage/voyage.md#voyage-guide).
-
-As you create this project make sure it meets all of the requirements, but once
-it reaches MVP, start implementing the optional features or get creative and
-extend it in ways we haven't envisioned. In other words, use the power of
-teamwork to make it distinctive and unique.
-
-Take note that we haven't given specific direction on what your UI/UX should
-look like. This is another area where you and your team can put your creativity 
-to work! 
+This project has been developed by a collaborative Chingu Voyage team, aiming to provide a valuable tool for any culinary enthusiast. We encourage creativity and unique contributions to the project while maintaining the essence of collaborative development.
 
 ## Requirements & Specifications
 
-### What You Need to Do
+**Structure:**
+- Frontend application with no backend required.
+- Freedom of choice in languages, tools, or libraries.
 
-The following define the minimum requirements and ideas for features you may
-implement to enhance this app, if time permits.
+**Styling:**
+- Clean and distinctive design with a footer linking to the GitHub repository.
 
-#### Structure
+**Functionality:**
+- User-friendly landing page with how-to-use instructions.
+- Search functionality for finding recipes by ingredients.
+- Interactive main and detailed recipe components.
 
-- [ ] This is a purely frontend application. No backend is required. 
-- [ ] You may use any languages, tools, or libraries you prefer when designing and building this app. 
-- [ ] We've included a JSON file containing the raw data in the `/assets` directory in this repo. But, if you choose, you may use the [Recipe - Rapid API](https://rapidapi.com/apidojo/api/tasty ) instead.
-- [ ] You may **_NOT_** use AI-base solution generators like GitHub CoPilot.
-- [ ] Useful links and resources:
-    - [Example Recipe App](https://namka-food-api.netlify.app)
-    - [Recipe - Rapid API](https://rapidapi.com/apidojo/api/tasty )
+## Getting Started
 
-#### Styling
+To get a local copy up and running, follow these simple steps:
 
-- [ ] Surprise us!!! Use your teams creativity to make this app distinctive.
-- [ ] Add a footer containing a link to your teams GitHub repo
-- [ ] In general, you will find these [UI design principles](https://www.justinmind.com/ui-design/principles) helpful.
-- [ ] Recommend using this resource for [clean CSS](https://www.devbridge.com/articles/implementing-clean-css-bem-method/)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/chingu-voyages/v46-tier1-team-05.git
+   ```
 
-#### Functionality
+No dependencies are needed to run the app as it is purely front-end with HTML, CSS, Bootstrap, and vanilla JavaScript. Simply open the `index.html` file in your browser to get started. Bootstrap is linked through a CDN.
 
--   User can see a landing page containing at least the following components:
-    - [ ] Header component displaying a brief how-to-use.
-    - [ ] Search field that enables users to input ingredient.
-    - [ ] A scrollable list of recipes displaying the results based on the search criteria.
-    - [ ] A summary main recipe component: it should display recipe image, name and link to details.
-    - [ ] A summary detail recipe component: it should display recipe name, category, and instructions
+## Acknowledgements
 
-- Search Component
-    - [ ] User can input an ingredient.
-    - [ ] Initiate the search by either pressing the Enter key or clicking the 'Search' button/icon.
+- [Chingu](https://www.chingu.io/) - For providing the platform to collaborate and learn.
+- [Bootstrap](https://getbootstrap.com/) - For the responsive design framework.
+<!-- - [RapidAPI](https://rapidapi.com/hub) - If any API is used. -->
 
-- Main Data Display Component
-    - [ ] Display result for each recipe in the main component.
-    - [ ] Remain on the header component if no search ingredient has been entered.
+## About Chingu
 
-- Summary Detail Component
-    - [ ] Display the following information of the selected recipe:
-        - Name
-        - Category
-        - Instructions
+Chingu is an open global platform connecting motivated learners to build fast and learn together in remote Voyage teams.
+
+## Developers
+
+This project is brought to you by:
+
+- [@Warlita](https://github.com/Warlita)
+- [@Cheulgi](https://github.com/Cheulgi)
+- [@NereidaRondon](https://github.com/NereidaRondon)
+
+Feel free to fork the project and submit your contributions. 
+
+## Contributing
+
+If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
+
+1. **Fork the Project**: Click the 'Fork' button on the top right of the project's GitHub page.
+2. **Clone your fork**: Click on the 'Code' button on the GitHub repository page and copy the URL under 'Clone with HTTPS'. Then, run the following command in your local terminal:
+    ```bash
+    git clone [URL you copied from the GitHub page]
+    ```
+    Replace `[URL you copied from the GitHub page]` with the actual URL.
+3. **Navigate to the repository on your computer**: Use the terminal to navigate to the directory where you have cloned the repo.
+    ```sh
+    cd [name-of-the-repo]
+    ```
+    Replace `[name-of-the-repo]` with the actual name of the repository.    
+4. **Create your Feature Branch**: 
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+5. **Make your changes**: Edit, add and commit your changes.
+    ```bash
+    git add .
+    git commit -m "Add your detailed description of your AmazingFeature or changes"
+    ```   
+6. **Push to the Branch**: 
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+7. **Open a Pull Request**: Navigate back to your forked repository and press the 'New pull request' button.
+
+For further assistance or feedback, reach out to the developers through their GitHub profiles linked above.
