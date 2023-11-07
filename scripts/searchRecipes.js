@@ -1,10 +1,28 @@
 //test term
 //const term = 'egg yolk';
-
+const body = document.getElementsByTagName('body')[0];
+const headers = document.getElementsByClassName('page-header');
 var recipes = []; // array to hold recipes
 let recipeList = document.getElementById('list');
 const element = document.getElementById('term');
 let elementNoSpace;
+
+//dark mode
+function theme(){
+
+  console.log(body.getAttribute("data-bs-theme"));
+
+  if(body.getAttribute("data-bs-theme","dark")=== "dark"){
+    console.log("if", body.getAttribute("data-bs-theme"));
+    body.setAttribute("data-bs-theme","light");
+    
+  }else{
+    console.log("else", body.getAttribute("data-bs-theme"));
+    body.setAttribute("data-bs-theme","dark");
+    headers.classList.add('darkmode-h1');
+
+  }
+}
 
 //enter key
 element.addEventListener('keydown', function (button) {
@@ -94,9 +112,6 @@ function termSearch(data, term) {
     
     console.log(recipes[i].name);
 
-
-
-
     recipeCard += `
     
     <div class="recipe-card-div card h-100 m-2 p-0 text-black col-sm-3 shadow">
@@ -128,8 +143,9 @@ const modal = document.createElement('div');
 function showModal(id){
   
   // Create the modal to display the recipe details
-  modal.classList.add('modal');  //give it a class of 'modal'
-
+  modal.classList.add('modal', 'custom-modal-style');  //give it a class of 'modal'
+  modal.setAttribute('tabindex', '-1');
+  modal.setAttribute('aria-hidden', 'true');
   //traverses the array of ingredients and concatenates them within li
   let ingredients = '';
   for(let ing=0; ing < recipes[id].sections[0].components.length; ing++){
@@ -150,7 +166,7 @@ function showModal(id){
   //structure the html in the modal
   modal.innerHTML = `
     
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <!-- Row 1 -->
@@ -159,7 +175,7 @@ function showModal(id){
             <button type="button" class="btn-close" onclick="closeModal()" aria-label="Close"></button>
           </div>
           
-                <div class="modal-body">
+                <div class="modal-body p-5">
           
                     <div class="container-fluid ">
                         <!-- Row 2 -->
@@ -175,9 +191,9 @@ function showModal(id){
                         </div>
 
                         <!-- Row 4 -->
-                        <div class="row my-3">
-                            <div class="col"> 
-                              <img src=${recipes[id].beauty_url ? recipes[id].beauty_url:recipes[id].thumbnail_url} class="card-img-top overflow-hidden my-3" alt="Freshly cooked ${recipes[id].name}." width="200" height="350" >
+                        <div class="row">
+                            <div class="col-lg-10 m-auto my-4"> 
+                              <img src=${recipes[id].beauty_url ? recipes[id].beauty_url:recipes[id].thumbnail_url} class="card-img-top m-auto rounded" alt="Freshly cooked ${recipes[id].name}." />
                             </div>
                         </div>
 
@@ -231,7 +247,7 @@ function showModal(id){
                         <!-- Row 7 -->
                         <div class="row d-flex m-auto my-5">
                             <div class="col d-flex m-auto justify-content-center"> 
-                              <video controls width="300">
+                              <video controls width="600" class="recipe-video">
                                 <source src=${recipes[id].original_video_url} type="video/mp4" />                         
                               </video>
                             </div>
