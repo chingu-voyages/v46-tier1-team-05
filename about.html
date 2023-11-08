@@ -1,71 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css"/> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <!-- GOOGLE FOINTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
 </head>
-<body class="d-flex flex-column">
+<body>
     <!-- Hero Image -->
 
-    
+
     <!--Nav Bar-->
     <nav class="navbar-size navbar navbar-expand-lg my-1">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img class="navbar-logo img-fluid m-auto" src="./assets/recipe_logo-01.svg" width="60" />
+                <img class="navbar-logo img-fluid m-auto" src="./assets/recipe_logo-01.svg" width="60" alt="Website logo with image of vegetables coming out of a pot."/>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 bg-white">
                 <li class="nav-item me-1">
-                <a class="nav-link link-style" href="index.html">Recipes</a>
+                <a class="nav-link nav-link-style fw-bold" href="index.html">Recipes</a>
                 </li>
                 
                 <li class="nav-item me-1">
-                <a class="nav-link link-style" aria-current="page" href="about.html">About</a>
+                <a class="nav-link nav-link-style fw-bold" aria-current="page" href="about.html">About</a>
                 </li>
 
-            </ul>
+                </ul>
 
             </div>
         </div>
     </nav>
 
-    <!-- MEET THE TEAM -->
+    <!-- ABOUT THE TEAM -->
     <main class="container-fluid">
-        <h1 class="pt-5 text-center mb-5">About the Team</h1>
+        <h1 class="page-header py-5 text-center mb-5">About the Team</h1>
 
         <div class="row">
 
-            <div class="col-lg-6 mb-5 d-flex flex-wrap justify-content-center">
-                <img class="rounded-circle" src="./assets/analita.png" alt="" width="200" height="200" />
-                <div class="mx-4">
+            <div class="developer-div col-lg-6 mb-5 d-flex flex-wrap justify-content-center">
+                <img class="rounded-circle" src="./assets/analita.png" alt="Portrait of Analita" width="200" height="200" />
+                <div class="mx-4 dev-content-div">
                     <p class="fs-4 mt-4 mb-1">Analita Voss</p>
                     <p>Developer</p>
-                    <div class="d-flex ">
-                        <a href="#"><img class="me-4" src="./assets/github.svg" alt="View GitHub Account" width="40" height="40" target="_blank"/></a>
-                        <a href="#"><img class="me-4 icon-li" src="./assets/linkedin.svg" alt="View Linkedin Profile" width="40" height="40" target="_blank" /></a>
+                    <div class="d-flex justify-content-evenly">
+                        <a href="#" target="_blank" class="icon-github"><img class="m-auto" src="./assets/github.svg" alt="View GitHub Account" width="40" height="40" /></a>
+                        <a href="#" target="_blank" class="icon-linkedin"><img class="m-auto" src="./assets/linkedin.svg" alt="View Linkedin Profile" width="40" height="40" /></a>
                     </div>
                 </div>
             </div>
 
 
-            <div class="col-lg-6 mb-5 d-flex flex-wrap justify-content-center">
-                <img class="rounded-circle" src="./assets/blank-profile.png" alt="" width="200" height="200"/>
-                <div class="mx-4">
+            <div class="developer-div col-lg-6 mb-5 d-flex flex-wrap justify-content-center">
+                <img class="rounded-circle" src="./assets/blank-profile.png" alt="Portrait of Arieonna" width="200" height="200"/>
+                <div class="mx-4 dev-content-div">
                     <p class="fs-4 mt-4 mb-1">Arieonna Hearn</p>
                     <p>Developer</p>
-                    <div class="d-flex ">
-                        <a href="https://github.com/chuelgi"><img class="me-4" src="./assets/github.svg" alt="View GitHub Account" width="40" height="40" target="_blank"/></a>
-                        
+                    <div class="d-flex justify-content-evenly">
+                        <a href="https://github.com/chuelgi" target="_blank" class="icon-github"><img class="m-auto" src="./assets/github.svg" alt="View GitHub Account" width="40" height="40" /></a>
+                        <div class="about-empty-div"></div>
                     </div>
                 </div>
             </div>
@@ -73,16 +80,17 @@
         </div>
 
         <div class="row">
-            
-            <div class="col-12 mb-5 d-flex flex-wrap justify-content-center">
 
-                <img class="rounded-circle" src="./assets/nereida.png" alt="" width="200" height="200"/>
-                <div class="mx-4">
+            <div class="developer-div col-12 mb-5 d-flex flex-wrap justify-content-center">
+
+                <img class="rounded-circle" src="./assets/nereida.png" alt="Portrait of Nereida" width="200" height="200"/>
+
+                <div class="mx-4 dev-content-div">
                     <p class="fs-4 mt-4 mb-1">Nereida Rondon</p>
                     <p>Developer</p>
-                    <div class="d-flex">
-                        <a href="https://github.com/NereidaRondon"><img class="me-4" src="./assets/github.svg" alt="View GitHub Account" width="40" height="40" target="_blank"/></a>
-                        <a href="https://www.linkedin.com/in/nereidarondon/"><img class="me-4 icon-li" src="./assets/linkedin.svg" alt="View Linkedin Profile" width="40" height="40" target="_blank"/></a>
+                    <div class="d-flex  justify-content-evenly">
+                        <a href="https://github.com/NereidaRondon" target="_blank" class="icon-github"><img class="m-auto" src="./assets/github.svg" alt="View GitHub Account" width="40" height="40" /></a>
+                        <a href="https://www.linkedin.com/in/nereidarondon/" target="_blank" class="icon-linkedin"><img class="m-auto" src="./assets/linkedin.svg" alt="View Linkedin Profile" width="40" height="40" /></a>
                     </div>
                 </div>
 
@@ -91,19 +99,34 @@
         </div>
 
     </main>
+    
 
-
-
-    <footer class="bg-success text-center text-white mt-auto flex-grow-1">
-        <div class="container-lg">
-            <p class="pt-3">Made by @cheulgi, @warlita, and @nereidarondon of Chingu Voyage 46 Team 05</p>
-            <div class="m-auto text-center">
-                <a href="https://github.com/chingu-voyages/v46-tier1-team-05"><img class="" src="./assets/github.svg" alt="View team GitHub repo" width="40" height="40"/></a>
+    <!-- FOOTER -->
+    <footer class="bg-success text-center text-white mt-5 flex-grow-1">
+        <div class="container-lg py-5">
+            
+            <div class="footer-icon-div m-auto d-flex justify-content-between text-center">
+                
+                <div class="bg-icon-div bg-white rounded-circle d-flex m-auto">
+                    <a class="m-auto" href="https://github.com/chingu-voyages/v46-tier1-team-05"><img  src="./assets/github.svg" alt="View team GitHub repo" width="40" height="40"/></a>
+                </div>
+                
+                <div class="bg-icon-div bg-white rounded-circle d-flex m-auto">
+                    <a class="m-auto"  href="https://www.chingu.io/"><img src="./assets/chingu.png" alt="View the Chingu Website to learn more." width="38" height="38"/></a>
+                </div>
+                
+                <div class="bg-icon-div bg-white rounded-circle d-flex m-auto">
+                    <a class="m-auto"  href="about.html"><img  class="rounded-circle" src="./assets/team_logo.png" alt="Learn about our team." width="40" height="40"/></a>
+                </div>
             </div>
         </div>
+        <p class="py-3">Coded by Team 05 -- @cheulgi, @warlita, and @nereidarondon </p>
+        <p class="pb-3 mb-0">Chingu Voyage 46 ©️2023</p>
     </footer>
 
-  <script src="index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
