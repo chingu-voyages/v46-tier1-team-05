@@ -45,6 +45,9 @@ h1{
 #sun-lightmode{
     filter: invert(94%) sepia(100%) saturate(23%) hue-rotate(348deg) brightness(106%) contrast(105%);
 }
+#moon-darkmode{
+filter: invert(11%) sepia(13%) saturate(563%) hue-rotate(169deg) brightness(97%) contrast(91%);
+}
 .recipe-card-div{
     width:300px;
 }
