@@ -54,7 +54,7 @@ h1{
 }
 footer {
     width: 100%;
-    background: linear-gradient(#2b0714, #4D1C2D);
+    background: linear-gradient(#4D1C2D, #2b0714 );
 }
 .footer-icon-div{
     width:250px;
