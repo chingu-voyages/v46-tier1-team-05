@@ -9,8 +9,8 @@ let elementNoSpace;
 
 //dark mode
 function theme(){
-
   console.log(body.getAttribute("data-bs-theme"));
+
   if(body.getAttribute("data-bs-theme","dark") === "dark"){
     body.setAttribute("data-bs-theme","light");
     localStorage.setItem("theme-mode", "light");
@@ -20,14 +20,19 @@ function theme(){
     localStorage.setItem("theme-mode", "dark");
 
   }  
-
   header.classList.toggle("darkmode-h1");
-  header.classList.toggle("page-header");
-  //header.classList.toggle("darkmode-h1");
-  
+  header.classList.toggle("page-header");  
 }
 window.addEventListener('load', (event) => {
   console.log('page is fully loaded');
+  body.setAttribute("data-bs-theme", localStorage.getItem("theme-mode"));
+  if(localStorage.getItem("theme-mode") === "dark"){
+    header.classList.add("darkmode-h1");
+    header.classList.remove("page-header"); 
+  } else{
+    header.classList.remove("darkmode-h1");
+    header.classList.add("page-header"); 
+  }
 });
 
 

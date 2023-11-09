@@ -75,9 +75,6 @@ footer {
     width:500px;
     margin:auto;
 }
-.dev-content-div{
-    width:200px;
-}
 .about-empty-div{
     width:40px;
     height:40px;
@@ -93,9 +90,7 @@ footer {
     }
 }
 @media screen and (max-width: 475px){
-    .dev-content-div{
-        text-align: center;
-    }
+
     .about-empty-div{
         display: none;
     }
