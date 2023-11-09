@@ -42,6 +42,9 @@ h1{
 .nav-link-style:hover{
     filter: drop-shadow(1px 1px 1px rgba(63, 18, 52, 0.6));
 }
+#sun-lightmode{
+    filter: invert(94%) sepia(100%) saturate(23%) hue-rotate(348deg) brightness(106%) contrast(105%);
+}
 .recipe-card-div{
     width:300px;
 }

@@ -1,7 +1,10 @@
 //test term
 //const term = 'egg yolk';
 const body = document.getElementsByTagName('body')[0];
+const themeBtn = document.getElementById('themeBtn');
 const header = document.getElementById('header');
+const sun = document.getElementById('sun-lightmode');
+const moon = document.getElementById('moon-darkmode');
 var recipes = []; // array to hold recipes
 let recipeList = document.getElementById('list');
 const element = document.getElementById('term');
@@ -14,11 +17,13 @@ function theme(){
   if(body.getAttribute("data-bs-theme","dark") === "dark"){
     body.setAttribute("data-bs-theme","light");
     localStorage.setItem("theme-mode", "light");
-
+    sun.style.display = 'none';
+    moon.style.display = 'block';
   }else{
     body.setAttribute("data-bs-theme","dark");
     localStorage.setItem("theme-mode", "dark");
-
+    sun.style.display = 'block';
+    moon.style.display = 'none';
   }  
   header.classList.toggle("darkmode-h1");
   header.classList.toggle("page-header");  
@@ -28,10 +33,14 @@ window.addEventListener('load', (event) => {
   body.setAttribute("data-bs-theme", localStorage.getItem("theme-mode"));
   if(localStorage.getItem("theme-mode") === "dark"){
     header.classList.add("darkmode-h1");
-    header.classList.remove("page-header"); 
+    header.classList.remove("page-header");
+    sun.style.display = 'block';
+    moon.style.display = 'none'; 
   } else{
     header.classList.remove("darkmode-h1");
-    header.classList.add("page-header"); 
+    header.classList.add("page-header");
+    sun.style.display = 'none';
+    moon.style.display = 'block'; 
   }
 });
 
