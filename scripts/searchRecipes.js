@@ -86,6 +86,9 @@ function termSearch(data, term) {
   function display(){
   if (recipes.length === 0) {
     console.log('no matches');
+    let test = document.getElementById("list");
+    test.innerHTML = '<h3 class="no-match"> no matches <h3>';
+    return;
   }
   
 	let recipeCard = '';
