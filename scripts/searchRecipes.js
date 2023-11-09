@@ -16,7 +16,7 @@ element.addEventListener('keydown', function (button) {
 			console.log('enter');
 			recipes.length = 0; //reset array
 			display();
-			getJson(element.value);
+			getJson(element.value.toLowerCase());
 		} else {
 			//reset and clear array
 			console.log('empty search ');
@@ -35,7 +35,7 @@ function searchRecipe() {
 	if (elementNoSpace !== '') {
 		console.log(element.value);
 		recipes.length = 0; //reset array
-		getJson(element.value);
+		getJson(element.value.toLowerCase());
 	}
 }
 
