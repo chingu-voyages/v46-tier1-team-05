@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="d-flex flex-column">
+<body class="d-flex flex-column" data-bs-theme="light">
     
     <!-- Hero Image -->
     <header class="position-relative">
@@ -35,7 +35,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 bg-white">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item me-1 ">
                 <a class="nav-link nav-link-style fw-bold" aria-current="page" href="index.html">Recipes</a>
                 </li>
@@ -45,9 +45,13 @@
                 </li>
 
             </ul>
-
+            <button id="themeBtn" class="btn btn-outline-secondary p-2 rounded-circle border border-secondary border-opacity-75 text-center" data-bs-theme="light" onClick="theme()">
+                <img id="moon-darkmode" src="./assets/moon-solid.svg" width="30" height="30"/>
+                <img id="sun-lightmode" src="./assets/sun-solid.svg" width="30" height="30"/>
+            </button>
             </div>
         </div>
+        
     </nav>
           
 
@@ -56,7 +60,7 @@
 
         <section>
             
-                <h1 class="page-header pt-5 text-center fw-bold">Recipe Finder</h1>
+                <h1 id="header" class="page-header pt-5 text-center fw-bold">Recipe Finder</h1>
            
                 <h2 class="text-center mb-3">Find recipes for ingredients you already have! </h2>
             
