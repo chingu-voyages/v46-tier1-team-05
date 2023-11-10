@@ -55,7 +55,7 @@ element.addEventListener('keydown', function (button) {
 			console.log('enter');
 			recipes.length = 0; //reset array
 			display();
-			getJson(element.value);
+			getJson(element.value.toLowerCase());
 		} else {
 			//reset and clear array
 			console.log('empty search ');
@@ -74,7 +74,7 @@ function searchRecipe() {
 	if (elementNoSpace !== '') {
 		console.log(element.value);
 		recipes.length = 0; //reset array
-		getJson(element.value);
+		getJson(element.value.toLowerCase());
 	}
 }
 
@@ -124,6 +124,9 @@ function termSearch(data, term) {
   function display(){
   if (recipes.length === 0) {
     console.log('no matches');
+    let test = document.getElementById("list");
+    test.innerHTML = '<h3 class="no-match"> no matches <h3>';
+    return;
   }
   
 	let recipeCard = '';
