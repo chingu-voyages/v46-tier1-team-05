@@ -29,13 +29,16 @@
     <!--Nav Bar-->
     <nav class="navbar-size navbar navbar-expand-lg mb-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" aria-label="View recipes"></a>
+            <button id="themeBtn" class="btn btn-outline-secondary p-2 rounded-circle border border-secondary border-opacity-75 text-center navbar-brand" data-bs-theme="light" onClick="theme()">
+                <img id="moon-darkmode" src="./assets/moon-solid.svg" width="30" height="30"/>
+                <img id="sun-lightmode" src="./assets/sun-solid.svg" width="30" height="30"/>
+            </button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item me-1 ">
                 <a class="nav-link nav-link-style fw-bold" aria-current="page" href="index.html">Recipes</a>
                 </li>
@@ -45,10 +48,6 @@
                 </li>
 
             </ul>
-            <button id="themeBtn" class="btn btn-outline-secondary p-2 rounded-circle border border-secondary border-opacity-75 text-center" data-bs-theme="light" onClick="theme()">
-                <img id="moon-darkmode" src="./assets/moon-solid.svg" width="30" height="30"/>
-                <img id="sun-lightmode" src="./assets/sun-solid.svg" width="30" height="30"/>
-            </button>
             </div>
         </div>
         
