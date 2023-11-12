@@ -27,7 +27,7 @@ h1{
     transition: all ease-in-out;
 }
 .header-logo:hover{
-    filter: drop-shadow(3px 3px 10px rgb(104, 89, 101));
+    filter: drop-shadow(3px 3px 15px rgb(104, 89, 101));
 }
 .navbar {
     position: sticky;
@@ -41,9 +41,6 @@ h1{
 }
 .nav-link-style:hover{
     filter: drop-shadow(1px 1px 1px rgba(63, 18, 52, 0.6));
-}
-#sun-lightmode{
-    filter: invert(94%) sepia(100%) saturate(23%) hue-rotate(348deg) brightness(106%) contrast(105%);
 }
 #moon-darkmode{
 filter: invert(11%) sepia(13%) saturate(563%) hue-rotate(169deg) brightness(97%) contrast(91%);
@@ -99,7 +96,8 @@ text-align: center;
 }
 @media screen and (max-width: 768px){
     .header-logo{
-        width:100px;
+        width:150px;
+        margin-top: 2rem;
     }
 }
 @media screen and (max-width: 475px){
