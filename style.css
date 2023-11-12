@@ -5,13 +5,19 @@
 } */
 
 /* ----------------------------------------- */
-
+.darkmode-h1{
+  color:#c27a93; 
+  text-shadow: 0px 0px 2px #4D1C2D;
+  font-size: 50px;
+}
+/* ----------------------------------------- */
 body{
     min-height: 100vh;
     font-family: 'Quicksand';
 }
 h1{
     font-family: 'Agbalumo';
+    
 }
 .page-header{
     color:#4D1C2D;
@@ -21,7 +27,7 @@ h1{
     transition: all ease-in-out;
 }
 .header-logo:hover{
-    filter: drop-shadow(3px 3px 10px rgb(104, 89, 101));
+    filter: drop-shadow(3px 3px 15px rgb(104, 89, 101));
 }
 .navbar {
     position: sticky;
@@ -36,6 +42,9 @@ h1{
 .nav-link-style:hover{
     filter: drop-shadow(1px 1px 1px rgba(63, 18, 52, 0.6));
 }
+#moon-darkmode{
+filter: invert(11%) sepia(13%) saturate(563%) hue-rotate(169deg) brightness(97%) contrast(91%);
+}
 .recipe-card-div{
     width:300px;
 }
@@ -45,7 +54,7 @@ h1{
 }
 footer {
     width: 100%;
-    background: linear-gradient(#2b0714, #4D1C2D);
+    background: linear-gradient(#4D1C2D, #2b0714 );
 }
 .footer-icon-div{
     width:250px;
@@ -69,22 +78,30 @@ footer {
     width:500px;
     margin:auto;
 }
-.dev-content-div{
-    width:200px;
-}
 .about-empty-div{
     width:40px;
     height:40px;
 }
+
+
+.no-match{
+text-align: center;
+  margin-top: 20px;
+}
+@media screen and (max-width: 990px){
+    .recipe-video{
+        width:300px;
+    }
+
+}
 @media screen and (max-width: 768px){
     .header-logo{
-        width:100px;
+        width:150px;
+        margin-top: 2rem;
     }
 }
 @media screen and (max-width: 475px){
-    .dev-content-div{
-        text-align: center;
-    }
+
     .about-empty-div{
         display: none;
     }

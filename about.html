@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
     <!-- GOOGLE FOINTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,46 +15,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
 </head>
-<body>
-    <!-- Hero Image -->
-
-
+<body data-bs-theme="light">
+    
     <!--Nav Bar-->
     <nav class="navbar-size navbar navbar-expand-lg my-1">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img class="navbar-logo img-fluid m-auto" src="./assets/recipe_logo-01.svg" width="60" alt="Website logo with image of vegetables coming out of a pot."/>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button id="themeBtn" class="btn btn-outline-secondary p-2 rounded-circle border border-secondary border-opacity-75 text-center navbar-brand" data-bs-theme="light" onClick="theme()">
+                <img id="moon-darkmode" src="./assets/moon-solid.svg" width="30" height="30"/>
+                <img id="sun-lightmode" src="./assets/sun-solid.svg" width="30" height="30"/>
             </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+         
+            <a href="index.html"><img class="navbar-logo img-fluid position-absolute top-100 start-50 translate-middle z-3" src="./assets/recipeapplogo.svg" width="100" height="100 alt=""/></a>
 
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 bg-white">
-                <li class="nav-item me-1">
-                <a class="nav-link nav-link-style fw-bold" href="index.html">Recipes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-4">
+                <li class="nav-item me-1 px-2">
+                    <a class="nav-link nav-link-style fw-bold" href="index.html">Recipes</a>
                 </li>
                 
-                <li class="nav-item me-1">
-                <a class="nav-link nav-link-style fw-bold" aria-current="page" href="about.html">About</a>
+                <li class="nav-item me-1 px-2">
+                    <a class="nav-link nav-link-style fw-bold" aria-current="page" href="about.html">About</a>
                 </li>
-
-                </ul>
-
-            </div>
+                
+            </ul>
+            
         </div>
+    </div>
     </nav>
 
     <!-- ABOUT THE TEAM -->
     <main class="container-fluid">
-        <h1 class="page-header py-5 text-center mb-5">About the Team</h1>
+        <h1 id="header" class="page-header py-5 text-center mb-5">About the Team</h1>
 
         <div class="row">
 
             <div class="developer-div col-lg-6 mb-5 d-flex flex-wrap justify-content-center">
                 <img class="rounded-circle" src="./assets/analita.png" alt="Portrait of Analita" width="200" height="200" />
-                <div class="mx-4 dev-content-div">
+                <div class="mx-4 text-center">
                     <p class="fs-4 mt-4 mb-1">Analita Voss</p>
                     <p>Developer</p>
                     <div class="d-flex justify-content-evenly">
@@ -66,7 +67,8 @@
 
 
             <div class="developer-div col-lg-6 mb-5 d-flex flex-wrap justify-content-center">
-                <img class="rounded-circle" src="./assets/blank-profile.png" alt="Portrait of Arieonna" width="200" height="200"/>
+
+                <img class="rounded-circle" src="./assets/arie.png" alt="Portrait of Arieonna" width="200" height="200"/>
                 <div class="mx-4 dev-content-div">
                     <p class="fs-4 mt-4 mb-1">Arieonna Hearn</p>
                     <p>Developer</p>
@@ -85,7 +87,7 @@
 
                 <img class="rounded-circle" src="./assets/nereida.png" alt="Portrait of Nereida" width="200" height="200"/>
 
-                <div class="mx-4 dev-content-div">
+                <div class="mx-4 dev-content-div text-center">
                     <p class="fs-4 mt-4 mb-1">Nereida Rondon</p>
                     <p>Developer</p>
                     <div class="d-flex  justify-content-evenly">
@@ -105,7 +107,7 @@
     <footer class="bg-success text-center text-white mt-5 flex-grow-1">
         <div class="container-lg py-5">
             
-            <div class="footer-icon-div m-auto d-flex justify-content-between text-center">
+            <div class="footer-icon-div m-auto pb-4 d-flex justify-content-between text-center">
                 
                 <div class="bg-icon-div bg-white rounded-circle d-flex m-auto">
                     <a class="m-auto" href="https://github.com/chingu-voyages/v46-tier1-team-05"><img  src="./assets/github.svg" alt="View team GitHub repo" width="40" height="40"/></a>
@@ -116,17 +118,17 @@
                 </div>
                 
                 <div class="bg-icon-div bg-white rounded-circle d-flex m-auto">
-                    <a class="m-auto"  href="about.html"><img  class="rounded-circle" src="./assets/team_logo.png" alt="Learn about our team." width="40" height="40"/></a>
+                    <a class="m-auto"  href="about.html"><img  class="rounded-circle" src="./assets/team_logo.svg" alt="Learn about our team." width="40" height="40"/></a>
                 </div>
             </div>
         </div>
-        <p class="py-3">Coded by Team 05 -- @cheulgi, @warlita, and @nereidarondon </p>
-        <p class="pb-3 mb-0">Chingu Voyage 46 ©️2023</p>
+        <p class="">Coded by Team 05 -- @cheulgi, @warlita, and @nereidarondon </p>
+        <p class="mb-0">Chingu Voyage 46 ©️2023</p>
+        <img class="img-fluid" src="./assets/ingredients.svg" alt=""/>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
+    <script src="./scripts/searchRecipes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
