@@ -21,7 +21,7 @@ Recipe Finder is a web application designed to help users find recipes based on 
 
 Try out the live version [here](https://chingu-voyages.github.io/v46-tier1-team-05/).
 
-![Recipe Finder](https://github.com/chingu-voyages/v46-tier1-team-05/assets/97356401/e1c2ee17-c793-4758-b132-7cd5ee87a3ee)
+![Recipe Finder](./assets/app-screenshot.png)
 
 
 ## General Instructions
