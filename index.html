@@ -16,10 +16,10 @@
 
 </head>
 
-<body class="d-flex flex-column" data-bs-theme="light">
+<body class="d-flex flex-column" data-bs-theme="light" onscroll="showScrollToTop()">
     
     <!-- Hero Image -->
-    <header class="position-relative">
+    <header id="top" class="position-relative">
         
         <img class="img-fluid" src="./assets/recipe_hero.png" height="200" alt="Horizontal header image of various vegetables"/>
         <a href="index.html"><img class="header-logo img-fluid position-absolute top-100 start-50 translate-middle z-3" src="./assets/recipeapplogo.svg" width="300" alt="Woman holding a recipe book and searching for recipes with a magnifying glass"/></a>
@@ -77,6 +77,10 @@
            
         </section>
         
+        <!-- SCROLL TO TOP -->
+        <section class="scrollToTop-div my-3 position-relative">
+            <a href="#top"><img id="scroll" class="scrollToTop position-absolute bottom-0 start-50 translate-middle-x" src="./assets/angles-up.svg" alt="Scroll to top of page." width="50" height="50" aria-roledescription="button"/></a>
+        </section> 
     </main>
 
     <!-- FOOTER -->

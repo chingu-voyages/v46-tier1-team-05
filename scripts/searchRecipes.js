@@ -5,10 +5,30 @@ const themeBtn = document.getElementById('themeBtn');
 const header = document.getElementById('header');
 const sun = document.getElementById('sun-lightmode');
 const moon = document.getElementById('moon-darkmode');
+const avatar = document.getElementById("avatar");
+const scroll = document.getElementById("scroll");
 var recipes = []; // array to hold recipes
 let recipeList = document.getElementById('list');
 const element = document.getElementById('term');
 let elementNoSpace;
+
+function showScrollToTop(){
+  if(window.scrollY > 900){
+    scroll.style.display = "block";
+  } else {
+    scroll.style.display = "none";
+    scroll.style.transition = "ease-in-out";
+  }
+}
+
+function scrollRemoveLogo(){
+  if(window.scrollY > 50){
+    avatar.style.display = "none";
+  } else {
+    avatar.style.display = "block";
+    avatar.style.transition = "ease-in-out";
+  }
+}
 
 //dark mode
 function theme(){
