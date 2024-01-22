@@ -68,7 +68,7 @@ Chingu is an open global platform connecting motivated learners to build fast an
 This project is brought to you by:
 
 - [@Warlita](https://github.com/Warlita)
-- [@Cheulgi](https://github.com/Cheulgi)
+- [@Chuelgi](https://github.com/chuelgi)
 - [@NereidaRondon](https://github.com/NereidaRondon)
 
 Feel free to fork the project and submit your contributions. 
